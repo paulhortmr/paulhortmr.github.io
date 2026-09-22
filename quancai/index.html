@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全彩-沉浸式视觉艺术与设计资源库</title>
+    <meta name="description" content="全彩视觉艺术资源库，提供高清全彩插画、3D渲染图、摄影作品及配色灵感。探索色彩美学，获取全彩素材下载与创作指南。">
+    <meta name="keywords" content="全彩,全彩插画,全彩素材,色彩设计,高清全彩图片,配色方案">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --accent-color: #fd79a8;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #2d3436;
+            --text-light: #636e72;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 32px;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: var(--spacing-md) 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-bar {
+            display: flex;
+            background: #f1f2f6;
+            border-radius: 20px;
+            padding: 4px 12px;
+            align-items: center;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 6px;
+            width: 150px;
+            color: var(--text-main);
+        }
+
+        .search-bar button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+            color: #1e272e;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #4a5568;
+            max-width: 600px;
+            margin: 0 auto var(--spacing-lg);
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        .tag:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+            background: #fff;
+        }
+
+        /* Main Content */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-md);
+            padding-left: var(--spacing-sm);
+            border-left: 4px solid var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .see-all {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .see-all:hover {
+            text-decoration: underline;
+        }
+
+        /* Grid System */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 180px;
+            background-color: #dfe6e9;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .card-content {
+            padding: var(--spacing-md);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-category {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: var(--spacing-md);
+            flex: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: var(--spacing-sm);
+            border-top: 1px solid #eee;
+        }
+
+        .card-stats {
+            display: flex;
+            gap: 12px;
+            font-size: 0.8rem;
+            color: #b2bec3;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #5649c0;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        /* Featured Section */
+        .featured-card {
+            background: #fff;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 400px;
+        }
+
+        .featured-img {
+            background-color: #dfe6e9;
+            position: relative;
+        }
+
+        .featured-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            padding: var(--spacing-lg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Feature List */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .feature-item {
+            background: var(--card-bg);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+            display: inline-block;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background: #fff;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: var(--spacing-md) 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            display: none;
+            padding-top: 8px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3436;
+            color: #dfe6e9;
+            padding: 60px 0 20px;
+            margin-top: var(--spacing-lg);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #b2bec3;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #636e72;
+            font-size: 0.9rem;
+            color: #636e72;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            nav ul {
+                gap: var(--spacing-md);
+                font-size: 0.9rem;
+            }
+
+            .featured-card {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><line x1="21.17" y1="8" x2="12" y2="8"></line><line x1="3.95" y1="6.06" x2="8.54" y2="14"></line><line x1="10.88" y1="21.94" x2="15.46" y2="14"></line></svg>
+                <span>Chroma全彩</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">插画</a></li>
+                    <li><a href="#">3D渲染</a></li>
+                    <li><a href="#">摄影</a></li>
+                    <li><a href="#">配色灵感</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索全彩素材...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>探索全彩视觉的无限可能</h1>
+                <p>汇集全球顶级设计师的全彩作品、高清素材与色彩搭配指南，激发您的创作灵感。</p>
+                <div class="hero-tags">
+                    <span class="tag">#扁平插画</span>
+                    <span class="tag">#赛博朋克</span>
+                    <span class="tag">#自然摄影</span>
+                    <span class="tag">#极简配色</span>
+                    <span class="tag">#3D建模</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Trending Section -->
+            <section>
+                <div class="section-title">
+                    <h2>本周热门全彩作品</h2>
+                    <a href="#" class="see-all">查看全部</a>
+                </div>
+                <div class="grid-4">
+                    <article class="card">
+                        <div class="card-image">
+                            <span class="card-badge">插画</span>
+                            <img src="https://picsum.photos/seed/art1/400/300" alt="全彩插画作品展示">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-category">数字艺术</div>
+                            <h3 class="card-title">赛博都市幻想</h3>
+                            <p class="card-desc">霓虹灯光下的未来都市，探索科技与自然的冲突美学。</p>
+                            <div class="card-footer">
+                                <div class="card-stats">
+                                    <span>👁 2.3k</span>
+                                    <span>❤ 856</span>
+                                </div>
+                                <a href="#" class="btn btn-primary">浏览</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-image">
+                            <span class="card-badge">摄影</span>
+                            <img src="https://picsum.photos/seed/photo2/400/300" alt="全彩摄影作品展示">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-category">风光摄影</div>
+                            <h3 class="card-title">极光下的极地</h3>
+                            <p class="card-desc">捕捉北极圈内绚丽多彩的极光景象，感受大自然的鬼斧神工。</p>
+                            <div class="card-footer">
+                                <div class="card-stats">
+                                    <span>👁 1.8k</span>
+                                    <span>❤ 420</span>
+                                </div>
+                                <a href="#" class="btn btn-primary">浏览</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-image">
+                            <span class="card-badge">3D</span>
+                            <img src="https://picsum.photos/seed/3d3/400/300" alt="3D全彩渲染展示">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-category">3D设计</div>
+                            <h3 class="card-title">抽象几何材质</h3>
+                            <p class="card-desc">利用光线追踪技术生成的全彩材质渲染，适用于UI设计背景。</p>
+                            <div class="card-footer">
+                                <div class="card-stats">
+                                    <span>👁 3.1k</span>
+                                    <span>❤ 1.2k</span>
+                                </div>
+                                <a href="#" class="btn btn-primary">浏览</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-image">
+                            <span class="card-badge">排版</span>
+                            <img src="https://picsum.photos/seed/typo4/400/300" alt="全彩排版设计展示">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-category">平面设计</div>
+                            <h3 class="card-title">多巴胺字体设计</h3>
+                            <p class="card-desc">高饱和度的全彩字体排版案例，提升品牌视觉冲击力。</p>
+                            <div class="card-footer">
+                                <div class="card-stats">
+                                    <span>👁 980</span>
+                                    <span>❤ 320</span>
+                                </div>
+                                <a href="#" class="btn btn-primary">浏览</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Featured Highlight -->
+            <section style="margin-top: 60px;">
+                <div class="section-title">
+                    <h2>编辑精选：全彩设计趋势</h2>
+                </div>
+                <div class="featured-card">
+                    <div class="featured-img">
+                        <img src="https://picsum.photos/seed/featured/800/600" alt="全彩设计趋势专题">
+                    </div>
+                    <div class="featured-content">
+                        <span class="card-category">专题文章</span>
+                        <h3 class="card-title" style="font-size: 1.8rem; margin-bottom: 16px;">2024全彩视觉设计趋势报告</h3>
+                        <p class="card-desc">随着屏幕显示技术的进步，全彩设计正迎来新的爆发。从高饱和度的“多巴胺设计”到细腻的渐变质感，我们深入分析了色彩心理学在现代UI和插画中的应用，为您揭示如何利用全彩元素提升用户体验。</p>
+                        <div style="display: flex; gap: 12px; margin-top: 24px;">
+                            <span class="tag">UI设计</span>
+                            <span class="tag">色彩心理学</span>
+                            <span class="tag">扁平化</span>
+                        </div>
+                        <a href="#" class="btn btn-primary" style="margin-top: 24px;">阅读全文</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Feature Grid -->
+            <section style="margin-top: 60px;">
+                <div class="section-title">
+                    <h2>为什么选择全彩视觉？</h2>
+                </div>
+                <div class="features">
+                    <div class="feature-item">
+                        <div class="feature-icon">🎨</div>
+                        <h3>丰富的情感表达</h3>
+                        <p style="color: var(--text-light); margin-top: 8px;">全彩画面能够传递更细腻的情绪，比黑白或单色更能吸引观众注意力。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📱</div>
+                        <h3>完美适配移动端</h3>
+                        <p style="color: var(--text-light); margin-top: 8px;">全彩设计在手机、平板等视网膜屏幕上能呈现最完美的细节和色彩还原。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <h3>提升信息层级</h3>
+                        <p style="color: var(--text-light); margin-top: 8px;">通过色彩对比，可以快速引导用户视线，突出关键信息，优化阅读体验。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section style="margin-top: 60px;">
+                <div class="section-title">
+                    <h2>常见问题</h2>
+                </div>
+                <div class="faq-section">
+                    <div class="faq-item">
+                        <div class="faq-question">全彩素材是否支持商用？</div>
+                        <div class="faq-answer">大部分本站收录的全彩插画和摄影作品均提供商业授权，具体请查看每张图片下的授权协议标签。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何获取高清全彩图片？</div>
+                        <div class="faq-answer">您可以通过搜索功能查找特定主题，点击“浏览”进入详情页，选择合适的分辨率下载。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">网站是否支持深色模式？</div>
+                        <div class="faq-answer">目前网站主要针对全彩视觉展示设计，推荐在明亮环境下浏览以获得最佳色彩体验。</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Chroma全彩</h3>
+                    <p style="color: #b2bec3; font-size: 0.9rem;">致力于为设计师、艺术家和创作者提供最优质的全彩视觉资源与灵感支持。</p>
+                </div>
+                <div class="footer-col">
+                    <h3>资源分类</h3>
+                    <ul>
+                        <li><a href="#">矢量插画</a></li>
+                        <li><a href="#">摄影图库</a></li>
+                        <li><a href="#">3D模型</a></li>
+                        <li><a href="#">字体素材</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>设计指南</h3>
+                    <ul>
+                        <li><a href="#">色彩搭配理论</a></li>
+                        <li><a href="#">排版技巧</a></li>
+                        <li><a href="#">品牌设计案例</a></li>
+                        <li><a href="#">教程与课程</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>联系我们</h3>
+                    <ul>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">商务合作</a></li>
+                        <li><a href="#">版权申诉</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Chroma全彩资源库. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Toggle Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                item.querySelector('.faq-question').addEventListener('click', () => {
+                    // Close others
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) otherItem.classList.remove('active');
+                    });
+                    // Toggle current
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+      </html>
