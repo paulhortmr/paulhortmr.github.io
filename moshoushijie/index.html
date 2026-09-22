@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>魔兽世界战士幻化-顶级外观搭配、套装收集与外观指南</title>
+    <meta name="description" content="魔兽世界战士幻化大全，提供PVP、PVE、经典旧世、大灾变及熊猫人之谜时期战士外观搭配推荐。包含套装收集进度、幻化师职业任务及外观细节鉴赏。">
+    <meta name="keywords" content="魔兽世界战士幻化,魔兽世界战士外观,战士幻化搭配,魔兽幻化师,魔兽世界套装">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #c79c6e;
+            --primary-hover: #a68050;
+            --bg-dark: #121214;
+            --bg-card: #1e1e24;
+            --text-main: #e1e1e6;
+            --text-muted: #a8a8b3;
+            --accent-red: #b91c1c;
+            --border-radius: 8px;
+            --container-width: 1200px;
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: normal;
+            border-left: none;
+            padding-left: 0;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(18, 18, 20, 0.95);
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: #fff;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.6), var(--bg-dark)), url('https://picsum.photos/seed/warrior/1920/1080.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #d1d5db;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: #000;
+            font-weight: bold;
+            border-radius: var(--border-radius);
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(199, 156, 110, 0.1);
+        }
+
+        /* Main Content */
+        main {
+            padding: 60px 0;
+        }
+
+        /* Filter Tabs */
+        .filter-bar {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--bg-card);
+            border: 1px solid #333;
+            color: var(--text-muted);
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-color);
+            color: #000;
+            border-color: var(--primary-color);
+        }
+
+        /* Grid Layout */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        /* Card Style */
+        .card {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border-color: #333;
+        }
+
+        .card-img-wrapper {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            background: #2a2a30;
+            border-radius: 4px;
+            color: var(--text-muted);
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .feature-item {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .feature-item h3 {
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Collection List */
+        .collection-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .collection-item {
+            display: flex;
+            align-items: center;
+            background: var(--bg-card);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            transition: background 0.2s;
+        }
+
+        .collection-item:hover {
+            background: #25252b;
+        }
+
+        .collection-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 6px;
+            margin-right: 20px;
+            object-fit: cover;
+        }
+
+        .collection-info {
+            flex: 1;
+        }
+
+        .collection-title {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .collection-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .progress-bar {
+            width: 150px;
+            height: 8px;
+            background: #333;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-left: 20px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--primary-color);
+        }
+
+        /* Guide Section */
+        .guide-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .guide-article {
+            margin-bottom: 30px;
+        }
+
+        .guide-article h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .guide-article p {
+            margin-bottom: 15px;
+            color: #d1d5db;
+        }
+
+        .guide-article ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .guide-article li {
+            margin-bottom: 8px;
+            color: #d1d5db;
+        }
+
+        .sidebar-card {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            position: sticky;
+            top: 90px;
+        }
+
+        .sidebar-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .sidebar-list li {
+            margin-bottom: 12px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 12px;
+        }
+
+        .sidebar-list li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-list a {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+        }
+
+        .sidebar-list span {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0c;
+            padding: 40px 0;
+            border-top: 1px solid #333;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            margin-left: 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            color: #555;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-container { flex-direction: column; height: auto; padding: 15px 0; }
+            nav ul { margin-top: 15px; gap: 15px; flex-wrap: wrap; justify-content: center; }
+            .features { grid-template-columns: 1fr; }
+            .guide-grid { grid-template-columns: 1fr; }
+            .collection-item { flex-direction: column; text-align: center; }
+            .progress-bar { width: 100%; margin: 15px 0; }
+            .collection-info { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span>⚔️</span> WOWER幻化指南
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">PVP幻化</a></li>
+                    <li><a href="#">PVE套装</a></li>
+                    <li><a href="#">经典旧世</a></li>
+                    <li><a href="#">收藏指南</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>重铸荣耀：魔兽世界战士幻化全攻略</h1>
+            <p>从经典旧世的粗犷板甲到暗影界的流光战甲，这里汇集了全版本、全职业的战士幻化搭配方案。打造属于你的战场主宰外观。</p>
+            <div>
+                <button class="btn">浏览最新幻化</button>
+                <button class="btn btn-outline">查看幻化师任务</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Filters -->
+        <div class="filter-bar">
+            <button class="filter-btn active">全部</button>
+            <button class="filter-btn">PVP竞技场</button>
+            <button class="filter-btn">T0/T1/T2套装</button>
+            <button class="filter-btn">暗影国度</button>
+            <button class="filter-btn">熊猫人之谜</button>
+            <button class="filter-btn">巨龙时代</button>
+            <button class="filter-btn">地心之战</button>
+        </div>
+
+        <!-- Featured Collections -->
+        <section>
+            <div class="section-title">
+                热门幻化合集
+                <span>精选外观，点击查看详情</span>
+            </div>
+            <div class="grid-layout">
+                <!-- Card 1 -->
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <span class="card-badge">暗影国度</span>
+                        <img src="https://picsum.photos/seed/warrior1/400/300.jpg" alt="暗影国度战神幻化">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">暗影国度 · 鲜血战神</h3>
+                        <div class="card-meta">
+                            <span>地心之战版本</span>
+                            <span>7件套</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">红色系</span>
+                            <span class="tag">重型板甲</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <span class="card-badge">熊猫人之谜</span>
+                        <img src="https://picsum.photos/seed/warrior2/400/300.jpg" alt="熊猫人幻化">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">熊猫人之谜 · 青龙卫士</h3>
+                        <div class="card-meta">
+                            <span>4.0-4.3版本</span>
+                            <span>稀有外观</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">绿色系</span>
+                            <span class="tag">龙鳞风格</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <span class="card-badge">经典旧世</span>
+                        <img src="https://picsum.photos/seed/warrior3/400/300.jpg" alt="T2套装幻化">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">经典旧世 · 龙鳞套装</h3>
+                        <div class="card-meta">
+                            <span>40级副本</span>
+                            <span>史诗难度</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">史诗套装</span>
+                            <span class="tag">金色纹路</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <span class="card-badge">PVP</span>
+                        <img src="https://picsum.photos/seed/warrior4/400/300.jpg" alt="竞技场幻化">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">竞技场 · 铁血战士</h3>
+                        <div class="card-meta">
+                            <span>S12赛季</span>
+                            <span>凶猛风格</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">暗红色</span>
+                            <span class="tag">高爆发</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <span class="card-badge">巨龙时代</span>
+                        <img src="https://picsum.photos/seed/warrior5/400/300.jpg" alt="巨龙时代幻化">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">巨龙时代 · 红龙守护者</h3>
+                        <div class="card-meta">
+                            <span>10.0版本</span>
+                            <span>巨龙系</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">金色</span>
+                            <span class="tag">龙翼披风</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 6 -->
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <span class="card-badge">通用</span>
+                        <img src="https://picsum.photos/seed/warrior6/400/300.jpg" alt="休闲幻化">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">祖尔金 · 丛林之王</h3>
+                        <div class="card-meta">
+                            <span>通用外观</span>
+                            <span>野性风格</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">绿色</span>
+                            <span class="tag">部落风格</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section>
+            <div class="section-title">幻化师与获取指南</div>
+            <div class="features">
+                <div class="feature-item">
+                    <div class="feature-icon">📜</div>
+                    <h3>幻化师职业任务</h3>
+                    <p>学习幻化师技能需要完成一系列任务链，解锁后可幻化任何已获取过的装备外观。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🧩</div>
+                    <h3>外观碎片收集</h3>
+                    <p>地心之战版本新增外观碎片系统，无需原版装备即可兑换稀有幻化部件。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✨</div>
+                    <h3>套装齐射</h3>
+                    <p>使用“套装齐射”道具可快速穿戴全套套装，无需一件件更换，适合快速展示。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collection Progress -->
+        <section>
+            <div class="section-title">玩家收藏进度</div>
+            <div class="collection-list">
+                <div class="collection-item">
+                    <img src="https://picsum.photos/seed/col1/100/100.jpg" alt="幻化展示" class="collection-img">
+                    <div class="collection-info">
+                        <h4 class="collection-title">暗夜精灵战士 - 铁血战神</h4>
+                        <p class="collection-desc">当前版本：地心之战 | 搭配风格：狂暴、高爆发</p>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%;"></div>
+                    </div>
+                </div>
+                <div class="collection-item">
+                    <img src="https://picsum.photos/seed/col2/100/100.jpg" alt="幻化展示" class="collection-img">
+                    <div class="collection-info">
+                        <h4 class="collection-title">部落牛头人 - 霜狼勇士</h4>
+                        <p class="collection-desc">当前版本：巨龙时代 | 搭配风格：防御、厚重</p>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="collection-item">
+                    <img src="https://picsum.photos/seed/col3/100/100.jpg" alt="幻化展示" class="collection-img">
+                    <div class="collection-info">
+                        <h4 class="collection-title">联盟人类 - 银色黎明</h4>
+                        <p class="collection-desc">当前版本：巫妖王之怒 | 搭配风格：神圣、白色系</p>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 60%;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Guide -->
+        <section>
+            <div class="section-title">
+                战士幻化进阶指南
+                <span>深度解析与搭配技巧</span>
+            </div>
+            <div class="guide-grid">
+                <div class="guide-content">
+                    <article class="guide-article">
+                        <h3>1. 经典旧世套装的获取与展示</h3>
+                        <p>对于许多老玩家而言，T0、T1、T2套装不仅是战力的象征，更是情怀的寄托。T2“龙鳞套装”因其独特的金色纹路和背部披风，至今仍是战士幻化中的热门选择。获取方式通常需要通过黑石山、通灵塔等副本的团队副本掉落。</p>
+                        <p><strong>搭配建议：</strong> T2套装非常适合搭配带有金色或暗红色调的单手武器，如“雷霆之怒，逐风者的祝福之剑”或“祖利安猛虎之爪”。护手部位建议使用带有独特护手动画的饰品（如“阿莱克丝塔萨的祝福之刃”），以增加视觉冲击力。</p>
+                    </article>
+                    
+                    <article class="guide-article">
+                        <h3>2. 熊猫人之谜：熊猫人幻化的独特魅力</h3>
+                        <p>熊猫人之谜版本（4.0-4.3）拥有大量基于中国古代服饰设计的幻化，非常适合熊猫人角色。特别是“翡翠梦境”系列的绿色套装，以及“四风谷”的布甲/皮甲风格幻化，虽然不是板甲，但通过“幻化师”职业特性，可以完美融入战士职业。</p>
+                        <p><strong>搭配建议：</strong> 熊猫人战士可以尝试将熊猫人风格的布甲长袍幻化为板甲外观，利用熊猫人自带的种族坐骑（如云豹）和舞蹈动作，打造出独特的东方武侠风格战士。</p>
+                    </article>
+
+                    <article class="guide-article">
+                        <h3>3. 地心之战：新幻化系统的利用</h3>
+                        <p>最新的地心之战版本引入了外观碎片系统。这意味着即使你没有特定的套装，也可以通过收集碎片来兑换外观。对于追求极致外观的玩家，建议关注“地心之战”的地下城首通奖励和世界掉落，这些外观往往带有独特的特效和动态效果。</p>
+                    </article>
+                </div>
+
+                <aside class="sidebar">
+                    <div class="sidebar-card">
+                        <h3>快速导航</h3>
+                        <ul class="sidebar-list">
+                            <li><a href="#">巨龙时代套装 <span>10.0</span></a></li>
+                            <li><a href="#">地心之战幻化 <span>11.0</span></a></li>
+                            <li><a href="#">军团再临套装 <span>7.0</span></a></li>
+                            <li><a href="#">巫妖王之怒 <span>3.3</span></a></li>
+                            <li><a href="#">大地的裂变 <span>4.0</span></a></li>
+                            <li><a href="#">台服国服对比 <span>指南</span></a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-card" style="margin-top: 20px;">
+                        <h3>常见问题</h3>
+                        <ul class="sidebar-list">
+                            <li><a href="#">幻化师在哪里接任务？ <span>暴风城</span></a></li>
+                            <li><a href="#">如何隐藏武器特效？ <span>设置</span></a></li>
+                            <li><a href="#">跨版本幻化是否互通？ <span>是</span></a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="#">关于本站</a>
+                <a href="#">投稿指南</a>
+                <a href="#">联系管理员</a>
+                <a href="#">免责声明</a>
+            </div>
+            <p class="copyright">© 2024 WOWER幻化指南 - 仅供玩家交流与分享，非暴雪娱乐官方站点。</p>
+        </div>
+    </footer>
+
+</body>
+                                  </html>
