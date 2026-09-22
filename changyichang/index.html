@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>肠衣厂-专业天然肠衣生产与供应链解决方案</title>
+    <meta name="description" content="本站致力于为您提供高品质的天然肠衣、人造肠衣及各类食品加工原料。拥有现代化肠衣厂生产基地，提供从原料采购、加工生产到出口贸易的一站式服务。">
+    <meta name="keywords" content="肠衣厂,天然肠衣,猪肠衣,羊肠衣,食品加工原料,肠衣贸易">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --border-color: #e0e0e0;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .bg-light {
+            background-color: var(--light-bg);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header & Nav */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .cta-button {
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #a93226;
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            background-color: #ddd;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 40px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Product Categories */
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .section-subtitle {
+            color: #7f8c8d;
+            margin-bottom: 50px;
+            font-size: 16px;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border: 1px solid var(--border-color);
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .cat-img {
+            height: 200px;
+            background-color: #eee;
+        }
+        
+        .cat-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cat-content {
+            padding: 20px;
+        }
+
+        .cat-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .cat-content p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .cat-link {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Process Section */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            right: 50px;
+            height: 2px;
+            background: var(--border-color);
+            z-index: 0;
+        }
+
+        .step-item {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: #fff;
+            border: 2px solid var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .step-item h4 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .step-item p {
+            font-size: 14px;
+            color: #666;
+            padding: 0 10px;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .feature-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 10px;
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--primary-color);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--accent-color);
+        }
+
+        .faq-answer {
+            padding-bottom: 20px;
+            color: #666;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content {
+                flex-direction: column-reverse;
+            }
+
+            .hero-text h1 {
+                font-size: 32px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">天然<span>肠衣厂</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#products">产品中心</a></li>
+                    <li><a href="#process">生产工艺</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-button">联系我们</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>源头直供，品质天然肠衣</h1>
+                <p>作为专业的肠衣厂，我们拥有从原料筛选、清洗、腌制到成品包装的全产业链生产体系。为全球香肠、火腿等肉制品加工企业提供稳定、合规的天然肠衣原料。</p>
+                <a href="#products" class="cta-button">查看产品规格</a>
+                <a href="#contact" class="cta-button" style="background: transparent; border: 2px solid var(--primary-color); color: var(--primary-color); margin-left: 10px;">获取报价</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://picsum.photos/seed/casing1/600/400" alt="现代化肠衣加工生产线">
+            </div>
+        </div>
+    </section>
+
+    <div class="stats">
+        <div class="stat-item">
+            <div class="stat-number">20+</div>
+            <div class="stat-label">年行业经验</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">5000+</div>
+            <div class="stat-label">平方米洁净车间</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">ISO</div>
+            <div class="stat-label">质量体系认证</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">天然无添加</div>
+        </div>
+    </div>
+
+    <section id="products" class="section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">主要产品系列</h2>
+                <p class="section-subtitle">根据不同肉制品加工需求，提供定制化肠衣解决方案</p>
+            </div>
+            <div class="categories-grid">
+                <article class="category-card">
+                    <div class="cat-img">
+                        <img src="https://picsum.photos/seed/pork/400/300" alt="猪肠衣">
+                    </div>
+                    <div class="cat-content">
+                        <h3>猪肠衣</h3>
+                        <p>取自健康猪的小肠，经过精细清洗和修整，具有弹性好、透明度高、耐煮耐蒸的特点，适用于制作各种香肠。</p>
+                        <a href="#" class="cat-link">查看规格参数 &rarr;</a>
+                    </div>
+                </article>
+                <article class="category-card">
+                    <div class="cat-img">
+                        <img src="https://picsum.photos/seed/sheep/400/300" alt="羊肠衣">
+                    </div>
+                    <div class="cat-content">
+                        <h3>羊肠衣</h3>
+                        <p>细薄紧致，口感细腻，是制作法式香肠、意大利腊肠的优质选择。分为净肠和盐渍肠衣两种形态。</p>
+                        <a href="#" class="cat-link">查看规格参数 &rarr;</a>
+                    </div>
+                </article>
+                <article class="category-card">
+                    <div class="cat-img">
+                        <img src="https://picsum.photos/seed/food/400/300" alt="牛肠衣">
+                    </div>
+                    <div class="cat-content">
+                        <h3>牛肠衣</h3>
+                        <p>强度高，韧性大，适合制作大口径的熏肠或午餐肉肠衣。经过特殊工艺处理，耐高温高压。</p>
+                        <a href="#" class="cat-link">查看规格参数 &rarr;</a>
+                    </div>
+                </article>
+                <article class="category-card">
+                    <div class="cat-img">
+                        <img src="https://picsum.photos/seed/capsule/400/300" alt="胶囊肠衣">
+                    </div>
+                    <div class="cat-content">
+                        <h3>胶囊肠衣</h3>
+                        <p>主要用于胶囊药物的封装，同时也用于高端食品的装饰性肠衣。透明度高，易于食用或溶解。</p>
+                        <a href="#" class="cat-link">查看规格参数 &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="section bg-light">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">标准化生产工艺</h2>
+                <p class="section-subtitle">从源头把控品质，确保每一根肠衣都符合国际食品安全标准</p>
+            </div>
+            <div class="process-steps">
+                <div class="step-item">
+                    <div class="step-icon">1</div>
+                    <h4>原料筛选</h4>
+                    <p>严格筛选健康牲畜，只使用符合检疫标准的原料，确保肠衣来源安全。</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon">2</div>
+                    <h4>清洗脱脂</h4>
+                    <p>采用多道物理清洗工序，去除表面油脂和杂质，保留肠衣天然纤维。</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon">3</div>
+                    <h4>手工/机械修整</h4>
+                    <p>经验丰富的工人进行精细修整，剔除瑕疵部分，保证肠衣的完整性和美观度。</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon">4</div>
+                    <h4>腌制包装</h4>
+                    <p>使用食品级盐或防腐剂进行科学腌制，真空包装，锁住新鲜，延长保质期。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://picsum.photos/seed/factory/600/400" alt="肠衣厂生产车间">
+                </div>
+                <div class="about-text">
+                    <h2>致力于成为全球领先的天然肠衣供应商</h2>
+                    <p>我们是一家集原料收购、加工、出口于一体的综合性肠衣厂。多年来，我们专注于提升生产工艺，优化供应链管理，致力于为客户提供性价比最高的天然肠衣产品。</p>
+                    <p>无论是大宗批发还是小批量定制，我们都拥有灵活的仓储和物流体系，确保货物按时交付。我们的产品远销欧美、东南亚等多个国家和地区，深受客户好评。</p>
+                    <ul class="feature-list">
+                        <li>自有大型养殖基地合作网络</li>
+                        <li>先进的食品级加工设备</li>
+                        <li>专业的质量检测实验室</li>
+                        <li>完善的售后技术服务支持</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section bg-light">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">常见问题解答</h2>
+                <p class="section-subtitle">关于肠衣采购、规格及运输的常见疑问</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">猪肠衣和羊肠衣的主要区别是什么？</div>
+                    <div class="faq-answer">
+                        <p>猪肠衣通常比羊肠衣厚实，弹性更强，适合制作口径较大的香肠；羊肠衣则更加细薄、透明度高，口感更细腻，常用于制作法式或意大利风味的高端香肠。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">肠衣的保质期一般是多久？</div>
+                    <div class="faq-answer">
+                        <p>在真空包装且未开封的情况下，盐渍肠衣通常保质期为12-18个月。干燥肠衣的保质期更长，但需注意防潮。开封后建议尽快使用并密封保存。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">支持定制规格吗？</div>
+                    <div class="faq-answer">
+                        <p>是的，我们提供多种直径和长度规格的肠衣。对于有特殊加工需求（如染色、特殊腌制）的客户，也可以进行定制生产。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">发货方式是怎样的？</div>
+                    <div class="faq-answer">
+                        <p>我们支持空运、海运及陆运等多种物流方式。对于大宗订单，我们会安排专业的冷链物流进行运输，确保货物在运输过程中保持最佳状态。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container text-center">
+            <h2 class="section-title">联系我们的销售团队</h2>
+            <p class="section-subtitle">如果您有采购意向或需要获取最新报价，请填写下表或直接致电。</p>
+            <div style="max-width: 600px; margin: 0 auto; background: #f8f9fa; padding: 30px; border-radius: 8px; text-align: left;">
+                <form onsubmit="event.preventDefault(); alert('感谢您的留言，我们会尽快联系您！');">
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: 500;">您的姓名</label>
+                        <input type="text" placeholder="请输入姓名" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: 500;">联系电话</label>
+                        <input type="tel" placeholder="请输入电话号码" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: 500;">需求类型</label>
+                        <select style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                            <option>产品询价</option>
+                            <option>批发采购</option>
+                            <option>技术咨询</option>
+                            <option>其他</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: 500;">留言内容</label>
+                        <textarea rows="4" placeholder="请简述您的需求..." style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+                    </div>
+                    <button type="submit" class="cta-button" style="width: 100%;">提交留言</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>天然肠衣厂</h4>
+                    <p>专注天然肠衣生产与供应二十年，为您提供最优质的食品加工原料。从源头到餐桌，我们用心守护每一份美味。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul class="footer-links">
+                        <li><a href="#products">产品中心</a></li>
+                        <li><a href="#process">生产工艺</a></li>
+                        <li><a href="#about">关于我们</a></li>
+                        <li><a href="#contact">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>产品系列</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">猪肠衣</a></li>
+                        <li><a href="#">羊肠衣</a></li>
+                        <li><a href="#">牛肠衣</a></li>
+                        <li><a href="#">胶囊肠衣</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul class="footer-links">
+                        <li>电话：0123-4567890</li>
+                        <li>邮箱：contact@casingfactory.com</li>
+                        <li>地址：中国某省某市工业区88号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 天然肠衣厂 版权所有 | 仅供展示用途</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 交互逻辑
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // 简单的平滑滚动效果
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
