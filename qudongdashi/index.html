@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="驱动大师官网提供专业的硬件驱动下载、更新与管理服务。支持显卡、声卡、网卡等多种硬件的自动检测与安装，一键修复系统驱动故障，保障电脑稳定运行。">
+    <meta name="keywords" content="驱动大师, 驱动下载, 显卡驱动, 硬件驱动, 驱动修复, 系统维护">
+    <title>驱动大师-硬件驱动下载与系统维护工具</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --primary-hover: #004494;
+            --accent-color: #ff6b00;
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e1e4e8;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .header-cta {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 24px;
+            border-radius: var(--radius-md);
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        .header-cta:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e6f0ff 100%);
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-large {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 14px 40px;
+            border-radius: var(--radius-lg);
+            font-size: 16px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0, 86, 179, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-large:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 86, 179, 0.4);
+        }
+
+        /* Features Grid */
+        .feature-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--border-color);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #e6f0ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-color);
+            font-size: 24px;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Driver Types */
+        .driver-types {
+            background-color: var(--card-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        .type-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.2s;
+        }
+
+        .type-item:hover {
+            background-color: #fafbfc;
+        }
+
+        .type-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #fff3e0;
+            color: var(--accent-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .type-info h4 {
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .type-info p {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* Troubleshooting Steps */
+        .steps {
+            background-color: var(--bg-color);
+        }
+
+        .step-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .step-item {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .step-num {
+            font-size: 36px;
+            font-weight: 800;
+            color: #e1e4e8;
+            line-height: 1;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .step-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        /* Safety Notice */
+        .safety-box {
+            background-color: #fff8e1;
+            border: 1px solid #ffe082;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin-top: 40px;
+            display: flex;
+            gap: 15px;
+            align-items: start;
+        }
+
+        .safety-icon {
+            color: #ffa000;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .safety-text h4 {
+            color: #e65100;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .safety-text p {
+            color: #795548;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            max-width: 300px;
+            line-height: 1.8;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            font-size: 14px;
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu {
+                display: none; /* Simplified for mobile */
+            }
+
+            .header-inner {
+                justify-content: center;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .type-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .type-icon {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                    <path d="M2 17l10 5 10-5"></path>
+                    <path d="M2 12l10 5 10-5"></path>
+                </svg>
+                <span>驱动大师</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="#">首页</a>
+                <a href="#">驱动下载</a>
+                <a href="#">驱动修复</a>
+                <a href="#">硬件检测</a>
+                <a href="#">帮助中心</a>
+            </nav>
+            <a href="#" class="header-cta">立即下载</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>智能硬件驱动管理专家</h1>
+                <p>一键检测电脑硬件，智能识别并安装最新驱动程序。解决蓝屏、花屏、无声音等驱动故障，让您的电脑性能始终处于最佳状态。</p>
+                <a href="#" class="btn-large">免费下载驱动大师</a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section">
+            <div class="container">
+                <div class="grid-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>一键安装</h3>
+                        <p>智能识别硬件型号，自动匹配并安装最新驱动，无需手动寻找。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>安全纯净</h3>
+                        <p>无捆绑软件，无广告弹窗，提供绿色、安全的驱动下载环境。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔧</div>
+                        <h3>驱动修复</h3>
+                        <p>针对蓝屏、黑屏、声卡失效等常见问题，提供专业的修复方案。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>驱动备份</h3>
+                        <p>一键备份当前驱动，系统还原时快速恢复，防止驱动丢失。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Driver Types Section -->
+        <section class="section driver-types">
+            <div class="container">
+                <div class="section-title">
+                    <h2>支持广泛的硬件驱动</h2>
+                    <p>覆盖电脑主要硬件设备，满足办公与游戏需求</p>
+                </div>
+                <div class="grid-2">
+                    <div class="type-item">
+                        <div class="type-icon">🎮</div>
+                        <div class="type-info">
+                            <h4>显卡驱动 (GPU)</h4>
+                            <p>支持 NVIDIA、AMD、Intel 各大品牌，优化游戏画质与性能。</p>
+                        </div>
+                    </div>
+                    <div class="type-item">
+                        <div class="type-icon">🔊</div>
+                        <div class="type-info">
+                            <h4>声卡驱动</h4>
+                            <p>解决音频输出异常、麦克风无声等问题，提升音质体验。</p>
+                        </div>
+                    </div>
+                    <div class="type-item">
+                        <div class="type-icon">🌐</div>
+                        <div class="type-info">
+                            <h4>网卡驱动</h4>
+                            <p>解决网络连接不稳定、无法上网等问题，保障网络通畅。</p>
+                        </div>
+                    </div>
+                    <div class="type-item">
+                        <div class="type-icon">🖨️</div>
+                        <div class="type-info">
+                            <h4>打印机与外设</h4>
+                            <p>支持主流打印机、扫描仪及摄像头驱动安装。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Use Section -->
+        <section class="section steps">
+            <div class="container">
+                <div class="section-title">
+                    <h2>快速解决驱动问题</h2>
+                    <p>简单三步，轻松恢复电脑正常功能</p>
+                </div>
+                <div class="step-container">
+                    <div class="step-item">
+                        <div class="step-num">01</div>
+                        <div class="step-content">
+                            <h3>检测硬件</h3>
+                            <p>运行驱动大师，软件将自动扫描电脑中所有硬件设备，识别显卡、声卡、网卡等信息。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">02</div>
+                        <div class="step-content">
+                            <h3>选择更新</h3>
+                            <p>扫描完成后，系统会显示驱动版本信息。点击“更新”按钮，选择官方认证的驱动程序进行安装。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">03</div>
+                        <div class="step-content">
+                            <h3>重启电脑</h3>
+                            <p>驱动安装完成后，建议重启计算机以使新驱动生效，从而解决相应的系统故障。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="safety-box">
+                    <div class="safety-icon">⚠️</div>
+                    <div class="safety-text">
+                        <h4>安全提示</h4>
+                        <p>请务必从官方网站或授权渠道下载驱动程序，避免安装来源不明的软件，以防电脑感染病毒或隐私泄露。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>驱动大师</h3>
+                    <p>致力于为用户提供专业、便捷的硬件驱动管理与系统维护服务。让科技生活更简单。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>产品功能</h4>
+                    <ul>
+                        <li><a href="#">驱动下载</a></li>
+                        <li><a href="#">驱动备份</a></li>
+                        <li><a href="#">驱动还原</a></li>
+                        <li><a href="#">硬件检测</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">下载说明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">公司简介</a></li>
+                        <li><a href="#">发展历程</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">合作伙伴</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 驱动大师 版权所有 | 保留所有权利</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
