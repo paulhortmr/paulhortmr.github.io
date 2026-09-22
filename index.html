@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="灵怪笔录 - 沉浸式中国志怪故事阅读平台。收录古今灵异传说、民间奇闻、志怪小说与悬疑推理故事，探索未知世界的神秘面纱。">
+    <meta name="keywords" content="灵怪笔录,志怪小说,民间传说,悬疑故事,灵异,中国鬼故事">
+    <title>灵怪笔录-中国志怪传说与悬疑故事阅读指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-color: #0f0e13;
+            --card-bg: #1a1925;
+            --text-main: #e0e0e0;
+            --text-muted: #9ca3af;
+            --accent-color: #8b5cf6;
+            --accent-hover: #7c3aed;
+            --border-color: #2d3748;
+            --font-serif: "Songti SC", "SimSun", "Times New Roman", serif;
+            --font-sans: system-ui, -apple-system, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Utility */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+            color: #fff;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, var(--border-color), transparent);
+            margin-left: 1rem;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(15, 14, 19, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(15,14,19,1)), url('https://picsum.photos/seed/ghost/1920/1080.jpg') no-repeat center center/cover;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            background: rgba(15, 14, 19, 0.7);
+            backdrop-filter: blur(5px);
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-color);
+            color: #fff;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
+        }
+
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            padding: 3rem 0;
+        }
+
+        /* Story List */
+        .story-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .story-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .story-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border-color: var(--accent-color);
+        }
+
+        .story-img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .story-info {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .story-tag {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .story-title {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .story-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .story-meta {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            padding-top: 0.8rem;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .rank-list {
+            list-style: none;
+        }
+
+        .rank-item {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .rank-num {
+            width: 24px;
+            height: 24px;
+            background-color: var(--accent-color);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .rank-item:nth-child(1) .rank-num { background-color: #ef4444; }
+        .rank-item:nth-child(2) .rank-num { background-color: #f97316; }
+        .rank-item:nth-child(3) .rank-num { background-color: #eab308; }
+
+        .rank-title {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .category-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .cat-tag {
+            padding: 0.4rem 1rem;
+            background-color: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            transition: all 0.2s;
+        }
+
+        .cat-tag:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+        }
+
+        /* Featured / Archive */
+        .archive-section {
+            background-color: #13131a;
+            padding: 4rem 0;
+            margin-top: 2rem;
+        }
+
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .archive-card {
+            background-color: var(--card-bg);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .archive-card:hover {
+            transform: scale(1.02);
+        }
+
+        .archive-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .archive-content {
+            padding: 1rem;
+        }
+
+        .archive-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .archive-content p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0e;
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                position: relative;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--card-bg);
+                padding: 1rem;
+                border-bottom: 1px solid var(--border-color);
+            }
+            nav.active {
+                display: block;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .story-card {
+                flex-direction: column;
+            }
+            .story-img {
+                width: 100%;
+                height: 200px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">灵怪<span>笔录</span></a>
+            <button class="mobile-menu-btn" aria-label="菜单">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">志怪小说</a></li>
+                    <li><a href="#">民间传说</a></li>
+                    <li><a href="#">悬疑推理</a></li>
+                    <li><a href="#">投稿专区</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>笔录人间，探寻幽微</h1>
+                <p>收录千年来流传于市井巷陌的奇闻异事，还原最真实的灵怪传说。在这里，历史与神秘交织，理性与恐惧共存。</p>
+                <a href="#latest" class="cta-btn">开始阅读</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Main Content Area -->
+            <div class="content-grid" id="latest">
+                
+                <!-- Left Column: Story List -->
+                <section class="story-feed">
+                    <h2 class="section-title">最新收录</h2>
+                    
+                    <article class="story-card">
+                        <img src="https://picsum.photos/seed/ghost1/400/300" alt="鬼市夜行图" class="story-img">
+                        <div class="story-info">
+                            <span class="story-tag">志怪小说</span>
+                            <h3 class="story-title">幽冥客栈的夜班守夜人</h3>
+                            <p class="story-desc">民国年间，一位落魄的画师在深山中投宿一家看似破败的客栈。深夜，他听到了奇怪的算盘声，却发现柜台后坐着的，并非活人...</p>
+                            <div class="story-meta">
+                                <span>作者：墨客行</span>
+                                <span>更新于：2023-10-24</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="story-card">
+                        <img src="https://picsum.photos/seed/ghost2/400/300" alt="古庙雨夜" class="story-img">
+                        <div class="story-info">
+                            <span class="story-tag">民间传说</span>
+                            <h3 class="story-title">雨夜古庙借伞</h3>
+                            <p class="story-desc">每逢暴雨倾盆的夜晚，山脚下的老槐树下总会出现一把油纸伞。若是有人借了伞，第二天定会带回一些意想不到的物件。</p>
+                            <div class="story-meta">
+                                <span>作者：听风者</span>
+                                <span>更新于：2023-10-22</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="story-card">
+                        <img src="https://picsum.photos/seed/ghost3/400/300" alt="镜中人" class="story-img">
+                        <div class="story-info">
+                            <span class="story-tag">悬疑推理</span>
+                            <h3 class="story-title">第十三张床</h3>
+                            <p class="story-desc">精神病院扩建时多出了一间病房，医生们从未见过里面住过病人，但每晚午夜，走廊尽头都会传来若有若无的歌声。</p>
+                            <div class="story-meta">
+                                <span>作者：阿洛</span>
+                                <span>更新于：2023-10-20</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="story-card">
+                        <img src="https://picsum.photos/seed/ghost4/400/300" alt="古宅旧梦" class="story-img">
+                        <div class="story-info">
+                            <span class="story-tag">都市怪谈</span>
+                            <h3 class="story-title">消失的电梯</h3>
+                            <p class="story-desc">城西大厦的电梯总是很准时，直到有一天，一位加班的程序员发现，电梯里的楼层按钮全部变成了乱码，而显示屏上显示的，却是十年前的日期。</p>
+                            <div class="story-meta">
+                                <span>作者：夜行者</span>
+                                <span>更新于：2023-10-18</span>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- Right Column: Sidebar -->
+                <aside class="sidebar">
+                    <!-- Ranking -->
+                    <div class="rank-box">
+                        <h3 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">热门榜单</h3>
+                        <ul class="rank-list">
+                            <li class="rank-item">
+                                <span class="rank-num">1</span>
+                                <a href="#" class="rank-title">尸语者：第十章</a>
+                            </li>
+                            <li class="rank-item">
+                                <span class="rank-num">2</span>
+                                <a href="#" class="rank-title">我在聊斋当捕快</a>
+                            </li>
+                            <li class="rank-item">
+                                <span class="rank-num">3</span>
+                                <a href="#" class="rank-title">午夜凶铃的真相</a>
+                            </li>
+                            <li class="rank-item">
+                                <span class="rank-num">4</span>
+                                <a href="#" class="rank-title">山村老尸之归来</a>
+                            </li>
+                            <li class="rank-item">
+                                <span class="rank-num">5</span>
+                                <a href="#" class="rank-title">阴阳眼探案录</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="category-box">
+                        <h3 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">分类浏览</h3>
+                        <div class="category-cloud">
+                            <a href="#" class="cat-tag">志怪小说</a>
+                            <a href="#" class="cat-tag">民间传说</a>
+                            <a href="#" class="cat-tag">悬疑推理</a>
+                            <a href="#" class="cat-tag">灵异都市</a>
+                            <a href="#" class="cat-tag">志怪笔记</a>
+                            <a href="#" class="cat-tag">山海经异兽</a>
+                            <a href="#" class="cat-tag">僵尸传说</a>
+                            <a href="#" class="cat-tag">水鬼传说</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Archive Section -->
+            <section class="archive-section">
+                <h2 class="section-title">往期精选</h2>
+                <div class="archive-grid">
+                    <div class="archive-card">
+                        <img src="https://picsum.photos/seed/ghost5/300/200" alt="灵异封面">
+                        <div class="archive-content">
+                            <h3>封门村：未解之谜</h3>
+                            <p>深度探访传说中的禁地。</p>
+                        </div>
+                    </div>
+                    <div class="archive-card">
+                        <img src="https://picsum.photos/seed/ghost6/300/200" alt="灵异封面">
+                        <div class="archive-content">
+                            <h3>聊斋志异：画皮新解</h3>
+                            <p>从民俗学角度解读经典。</p>
+                        </div>
+                    </div>
+                    <div class="archive-card">
+                        <img src="https://picsum.photos/seed/ghost7/300/200" alt="灵异封面">
+                        <div class="archive-content">
+                            <h3>湘西赶尸：真假之辩</h3>
+                            <p>揭秘古老行业的真实面貌。</p>
+                        </div>
+                    </div>
+                    <div class="archive-card">
+                        <img src="https://picsum.photos/seed/ghost8/300/200" alt="灵异封面">
+                        <div class="archive-content">
+                            <h3>百鬼夜行：日本怪谈</h3>
+                            <p>跨文化的灵异故事对比。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">灵怪笔录</div>
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">投稿指南</a>
+                <a href="#">免责声明</a>
+                <a href="#">联系合作</a>
+            </div>
+            <p class="copyright">Copyright © 2023 灵怪笔录. All Rights Reserved. 本站内容仅供娱乐与参考，请勿模仿故事中的危险行为。</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的移动端菜单切换逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('nav');
+
+            if (menuBtn && nav) {
+                menuBtn.addEventListener('click', function() {
+                    nav.classList.toggle('active');
+                });
+
+                // 点击菜单项后自动关闭菜单
+                const navLinks = nav.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        nav.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+  </html>
